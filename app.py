@@ -13,6 +13,3 @@ def create_app() -> Flask:
 
 if __name__ == "__main__":
     create_app().run(debug=True)
-    
-
-python -m pip install flask
