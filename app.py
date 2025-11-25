@@ -10,6 +10,6 @@ def create_app() -> Flask:
 
     return app
 
-
+# test commit
 if __name__ == "__main__":
     create_app().run(debug=True)
