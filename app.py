@@ -10,6 +10,17 @@ def create_app() -> Flask:
 
     return app
 
-# test commit
+    @app.get("/historie")
+    def historie():
+        return render_template("historie.html")
+
+    @app.get("/kultur")
+    def kultur():
+        return render_template("kultur.html")
+
+    @app.get("/kontakt")
+    def kontakt():
+        return render_template("kontakt.html")
+
 if __name__ == "__main__":
     create_app().run(debug=True)
