@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <div id="page-loader" class="page-loader">
+        <div class="page-loader-inner">
+            <div class="page-loader-ring">
+                <span class="ring-segment ring-blue"></span>
+                <span class="ring-segment ring-red"></span>
+                <span class="ring-segment ring-yellow"></span>
+                <span class="ring-segment ring-green"></span>
+            </div>
+            <p>Laster side&nbsp;…</p>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-logo">
             <a href="{{ url_for('index') }}">Sámi Siida</a>
@@ -21,5 +33,44 @@
     <div id="content">
         {% block content %}{% endblock %}
     </div>
+
+    <script>
+        // Viser en liten loading-effekt når man klikker på en nav-lenke
+        (function () {
+            var loader = document.getElementById("page-loader");
+            var navLinks = document.querySelectorAll(".nav-links a");
+
+            function showLoader() {
+                if (loader) {
+                    loader.classList.add("is-visible");
+                }
+            }
+
+            navLinks.forEach(function (link) {
+                link.addEventListener("click", function (e) {
+                    var targetHref = link.getAttribute("href");
+                    var samePath = targetHref && targetHref === window.location.pathname;
+
+                    // La Ctrl/cmd-klikking, høyreklikk eller lenker til samme side fungere som normalt
+                    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0 || samePath) {
+                        return;
+                    }
+
+                    e.preventDefault();
+                    showLoader();
+
+                    setTimeout(function () {
+                        window.location.href = link.href;
+                    }, 550); // liten forsinkelse slik at animasjonen vises
+                });
+            });
+
+            window.addEventListener("pageshow", function () {
+                if (loader) {
+                    loader.classList.remove("is-visible");
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

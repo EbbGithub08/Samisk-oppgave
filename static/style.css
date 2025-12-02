@@ -242,6 +242,88 @@ body {
     margin: 0;
 }
 
+/* FULLSKJERMS-LOADER VED NAVIGASJON */
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(15, 23, 42, 0.93), rgba(2, 6, 23, 0.98));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease-out;
+    z-index: 100;
+}
+
+.page-loader.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.page-loader-inner {
+    text-align: center;
+    animation: fadeInUp 0.4s ease-out both;
+}
+
+.page-loader-inner p {
+    margin-top: 0.85rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #e5e7eb;
+}
+
+.page-loader-ring {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    border-radius: 999px;
+    border: 2px solid rgba(30, 64, 175, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 35px rgba(15, 23, 42, 0.9);
+}
+
+.ring-segment {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    border: 4px solid transparent;
+    animation: spin 1s linear infinite;
+}
+
+.ring-blue {
+    border-top-color: #003882;
+}
+
+.ring-red {
+    border-right-color: #d92228;
+    animation-duration: 1.2s;
+}
+
+.ring-yellow {
+    border-bottom-color: #ffd700;
+    animation-duration: 1.4s;
+}
+
+.ring-green {
+    border-left-color: #007a3d;
+    animation-duration: 1.6s;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* ENKLE ANIMASJONER */
 
 @keyframes fadeInUp {
