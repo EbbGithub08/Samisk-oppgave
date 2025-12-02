@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid #ffd700; /* Sami Yellow */
+    border-bottom: 10px solid #ff0000; /* Sami Yellow */
 }
 
 .nav-logo a {
@@ -43,5 +43,5 @@ body {
 }
 
 .nav-links a.active {
-    border-bottom: 2px solid #007a3d; /* Sami Green */
+    border-bottom: 2px solid #ffe600; /* Sami Green */
 }
