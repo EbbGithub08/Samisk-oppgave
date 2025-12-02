@@ -1,10 +1,85 @@
 {% extends "base.html" %}
 
-{% block title %}Kultur{% endblock %}
+{% block title %}Kultur - Sámi Siida{% endblock %}
 
 {% block content %}
-<main style="padding: 2rem;">
-    <h1>Kultur</h1>
-    <p>Kultur om det samiske folket.</p>
+<main class="page-wrapper">
+    <!-- HERO / INTRO -->
+    <section class="hero-section hero-historie">
+        <div class="hero-inner">
+            <p class="hero-kicker">Samisk kultur</p>
+            <h1>Levende tradisjoner i et moderne Sápmi</h1>
+            <p class="hero-lead">
+                Samisk kultur er både eldgammel og samtidig i stadig utvikling. Språk, joik, duodji,
+                kofter, reindrift og kystliv er bare noen av uttrykkene som binder mennesker og
+                landskap sammen.
+            </p>
+        </div>
+    </section>
+
+    <!-- DEL 1: SPRÅK OG IDENTITET -->
+    <section class="content-section two-column">
+        <div class="text-column">
+            <h2>Språk som bærer av kultur</h2>
+            <p>
+                Det finnes flere samiske språk, blant annet nordsamisk, lulesamisk og sørsamisk.
+                Hvert språk har egne dialekter, uttrykk og fortellinger knyttet til natur, dyr,
+                familier og tradisjoner.
+            </p>
+            <p>
+                Språkene ble lenge presset tilbake, men i dag jobbes det aktivt med revitalisering
+                gjennom barnehager, skoler, medier og kunst. Når språket brukes i hverdagen, styrkes
+                også identiteten og fellesskapsfølelsen.
+            </p>
+        </div>
+        <div class="image-column">
+            <div class="image-placeholder">
+                <img src="{{ url_for('static', filename='img/samisk-på-skilt.avif') }}"
+                     alt="Veiskilt i Norge med samisk og norsk tekst"
+                     style="max-width: 100%; max-height: 100%; border-radius: 0.9rem; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- DEL 2: MUSIKK, JOIK OG DUODJI -->
+    <section class="content-section">
+        <h2>Musikk, joik og duodji</h2>
+        <p>
+            Joik er en av de eldste musikkformene i Europa, og har tradisjonelt vært brukt for å
+            formidle følelser, minner og historier om mennesker, dyr og steder. I dag finner vi
+            joik både i tradisjonell form og i moderne musikk.
+        </p>
+        <p>
+            Duodji er samisk håndverk – alt fra bruksgjenstander til kunst. Gjennom mønstre,
+            farger og materialer forteller duodji om tilhørighet, naturforståelse og estetikk.
+            Håndverket videreføres både i familier og gjennom utdanning.
+        </p>
+    </section>
+
+    <!-- DEL 3: KOFTER, LANDSKAP OG HVERDAGSLIV I BILDER -->
+    <section class="content-section image-band kultur-gallery">
+        <h2>Kultur i bilder</h2>
+        <p>
+            Her er noen visuelle glimt fra samisk kultur – fra bosetting og kofter til reindrift.
+            Du kan bytte ut bildene etter behov, men strukturen er klar til bruk.
+        </p>
+        <div class="image-grid">
+            <div class="image-placeholder small">
+                <img src="{{ url_for('static', filename='img/samisk-bosetning.webp') }}"
+                     alt="Samisk bosetning i landskapet"
+                     style="max-width: 100%; max-height: 100%; border-radius: 0.8rem; object-fit: cover;">
+            </div>
+            <div class="image-placeholder small">
+                <img src="{{ url_for('static', filename='img/chad.webp') }}"
+                     alt="Detaljer fra en samisk kofte i tradisjonelle farger"
+                     style="max-width: 100%; max-height: 100%; border-radius: 0.8rem; object-fit: cover;">
+            </div>
+            <div class="image-placeholder small">
+                <img src="{{ url_for('static', filename='img/reindrift-samisk.jpg') }}"
+                     alt="Reindrift som en viktig del av samisk kultur"
+                     style="max-width: 100%; max-height: 100%; border-radius: 0.8rem; object-fit: cover;">
+            </div>
+        </div>
+    </section>
 </main>
 {% endblock %}
