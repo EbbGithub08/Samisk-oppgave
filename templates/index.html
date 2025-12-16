@@ -1,10 +1,74 @@
 {% extends "base.html" %}
 
-{% block title %}Hjem{% endblock %}
+{% block title %}Velkommen til Sámi Siida{% endblock %}
 
 {% block content %}
-<main style="padding: 2rem;">
-    <h1>Velkommen</h1>
-    <p>Utforsk den rike historien og kulturen til det samiske folket.</p>
+<main class="page-wrapper">
+    <!-- HERO / INTRO -->
+    <section class="hero-section hero-historie">
+        <div class="hero-inner">
+            <p class="hero-kicker">Utforsk Sápmi</p>
+            <h1>Velkommen til Sámi Siida</h1>
+            <p class="hero-lead">
+                En nettside dedikert til å utforske den rike historien, den levende kulturen og
+                de unike tradisjonene til det samiske folket. Bli med på en reise gjennom Sápmi.
+            </p>
+        </div>
+    </section>
+
+    <!-- DEL 1: INTRODUKSJON -->
+    <section class="content-section two-column">
+        <div class="text-column">
+            <h2>Hva er Sámi Siida?</h2>
+            <p>
+                "Siida" er et samisk ord som beskriver en gruppe familier som lever og arbeider
+                sammen, og deler ressurser i et felles område. På samme måte er denne nettsiden
+                et digitalt samlingssted for kunnskap om samisk kultur og historie.
+            </p>
+            <p>
+                Her kan du lære om Sápmi, det tradisjonelle samiske landskapet, utforske
+                hovedtrekkene i historien, og få et innblikk i en kultur som er både stolt av
+                sine røtter og i stadig utvikling.
+            </p>
+        </div>
+        <div class="image-column">
+            <div class="image-placeholder">
+                <img src="{{ url_for('static', filename='img/sapmi-kart.jpg') }}"
+                     alt="Kart over Sápmi-området"
+                     style="max-width: 100%; max-height: 100%; border-radius: 0.9rem; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- DEL 2: UTFORSK TEMAER -->
+    <section class="content-section">
+        <h2 style="margin-bottom: 1.5rem;">Utforsk våre temaer</h2>
+        <div class="explore-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem;">
+            <a href="{{ url_for('historie') }}" class="explore-card" style="display: block; text-decoration: none; color: inherit; background: radial-gradient(circle at top left, rgba(0, 56, 130, 0.32), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(55, 65, 81, 0.95); border-radius: 1.2rem; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 10px 25px rgba(0,0,0,0.4);">
+                <img src="{{ url_for('static', filename='img/reindrift-samisk.jpg') }}" alt="Reinsdyr på vidda" style="width: 100%; height: 160px; object-fit: cover; display: block;">
+                <div class="card-content" style="padding: 1.2rem 1.5rem;">
+                    <h3 style="font-size: 1.2rem; margin: 0 0 0.5rem;">Historie</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.6; margin: 0; color: #d1d5db;">
+                        Fra tusenårig bosetning til dagens rettighetskamp. Utforsk det samiske folkets lange reise.
+                    </p>
+                </div>
+            </a>
+            <a href="{{ url_for('kultur') }}" class="explore-card" style="display: block; text-decoration: none; color: inherit; background: radial-gradient(circle at top left, rgba(217, 34, 40, 0.2), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(55, 65, 81, 0.95); border-radius: 1.2rem; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 10px 25px rgba(0,0,0,0.4);">
+                <img src="{{ url_for('static', filename='img/kofte-samisk.jpg') }}" alt="Samisk kofte" style="width: 100%; height: 160px; object-fit: cover; display: block;">
+                <div class="card-content" style="padding: 1.2rem 1.5rem;">
+                    <h3 style="font-size: 1.2rem; margin: 0 0 0.5rem;">Kultur</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.6; margin: 0; color: #d1d5db;">
+                        Oppdag et mangfold av språk, musikk og håndverkstradisjoner som holdes levende i Sápmi.
+                    </p>
+                </div>
+            </a>
+        </div>
+        <style>
+            .explore-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+            }
+        </style>
+    </section>
 </main>
 {% endblock %}
