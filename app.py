@@ -16,6 +16,10 @@ def create_app() -> Flask:
     def kultur():
         return render_template("kultur.html")
 
+    @app.get("/kilder")
+    def kilder():
+        return render_template("kilder.html")
+
     @app.get("/kontakt")
     def kontakt():
         return render_template("kontakt.html")
