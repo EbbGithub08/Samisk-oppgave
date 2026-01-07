@@ -17,87 +17,64 @@
         </div>
     </section>
 
-    <!-- DEL 1: HVA ER SÁPMI? + STORT BILDEFELT -->
-    <section class="content-section two-column">
-        <div class="text-column">
-            <h2>Hva er Sápmi?</h2>
+    <!-- NY LAYOUT: ÉN STOR BOKS ØVERST + TO MINDRE UNDER -->
+    <section class="history-grid">
+        <!-- Stor boks øverst -->
+        <article class="content-section history-card-large">
+            <div class="history-large-layout">
+                <div class="history-text">
+                    <p class="accent-pill">Hva er Sápmi?</p>
+                    <h2>Et levende landområde på tvers av grenser</h2>
+                    <p>
+                        Sápmi er området der det samiske folket tradisjonelt har levd – på tvers av dagens
+                        landegrenser i Norge, Sverige, Finland og Russland. Regionen spenner fra kyst til
+                        innland, fra fjorder til vidder, og har alltid vært tett knyttet til naturen.
+                    </p>
+                    <p>
+                        I Sápmi har mennesker, dyr og landskap vært vevd sammen gjennom generasjoner.
+                        Tradisjonelle næringer som reindrift, fiske, jordbruk og håndverk har gitt både
+                        mat, inntekt og identitet.
+                    </p>
+                    <p>
+                        Samtidig har historien vært preget av grenser, kristning, fornorsking og kamp for
+                        rettigheter. I dag arbeides det aktivt for å ta tilbake språk, kultur og tilknytning
+                        til tradisjonelle områder.
+                    </p>
+                </div>
+                <div class="history-illustration">
+                    <div class="image-frame">
+                        <img src="{{ url_for('static', filename='img/sapmi-kart.jpg') }}"
+                             alt="Kart over Sápmi-området"
+                             class="history-hero-image">
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- To mindre bokser på raden under -->
+        <article class="content-section history-card-small">
+            <h2>Fornorsking og tap av språk</h2>
             <p>
-                Sápmi er området der det samiske folket tradisjonelt har levd – på tvers av dagens
-                landegrenser i Norge, Sverige, Finland og Russland. Regionen spenner fra kyst til
-                innland, fra fjorder til vidder, og har alltid vært tett knyttet til naturen.
+                I mange tiår ble samisk språk og kultur sett ned på og aktivt undertrykt. Barn fikk
+                ikke bruke samisk på skolen, og mange familier opplevde press for å «bli norske».
             </p>
             <p>
-                I Sápmi har mennesker, dyr og landskap vært vevd sammen gjennom generasjoner.
-                Tradisjonelle næringer som reindrift, fiske, jordbruk og håndverk har gitt både
-                mat, inntekt og identitet.
+                Resultatet var at mange sluttet å lære bort språket til neste generasjon, og mye
+                tradisjonell kunnskap gikk tapt eller ble gjemt bort.
             </p>
-        </div>
-        <div class="image-column">
-            <div class="image-placeholder">
-                <img src="{{ url_for('static', filename='img/sapmi-kart.jpg') }}"
-                     alt="Kart over Sápmi-området som strekker seg over Norge, Sverige, Finland og Russland"
-                     style="max-width: 100%; max-height: 100%; border-radius: 0.9rem; object-fit: cover;">
-            </div>
-        </div>
-    </section>
+        </article>
 
-    <!-- DEL 2: TIDSLINJE / HOVEDTREKK I HISTORIEN -->
-    <section class="content-section timeline-section">
-        <h2>Hovedtrekk i samisk historie</h2>
-        <div class="timeline">
-            <article class="timeline-item">
-                <h3>Eldgammel bosetning</h3>
-                <p>
-                    Arkeologiske funn viser spor etter mennesker i nordområdene i flere tusen år.
-                    Kunnskap om jakt, fiske og fangst ble overført muntlig fra generasjon til generasjon.
-                </p>
-            </article>
-            <article class="timeline-item">
-                <h3>Grenser og kristning</h3>
-                <p>
-                    Etter hvert som statene i nord vokste fram, ble samiske områder delt og kontrollert.
-                    Kirken og myndighetene innførte nye lover, skatter og grenser som påvirket tradisjonelle
-                    livsformer.
-                </p>
-            </article>
-            <article class="timeline-item">
-                <h3>Fornorsking og tap av språk</h3>
-                <p>
-                    I lang tid ble samisk språk og kultur aktivt undertrykt. Mange barn fikk ikke bruke
-                    samisk på skolen, og mange familier sluttet å lære bort språket videre.
-                </p>
-            </article>
-            <article class="timeline-item">
-                <h3>Rettighetskamp og revitalisering</h3>
-                <p>
-                    På 1900- og 2000-tallet vokste en sterk samisk bevegelse fram. I dag arbeides det
-                    for å styrke språk, kultur, politisk deltakelse og retten til tradisjonelle områder.
-                </p>
-            </article>
-        </div>
-    </section>
-
-    <!-- DEL 3: HISTORIE I BILDER / BILDEGALLERI -->
-    <section class="content-section image-band">
-        <h2>Historien i bilder</h2>
-        
-        <div class="image-grid">
-            <div class="image-placeholder small">
-                <img src="{{ url_for('static', filename='img/samisk-bosetning.webp') }}"
-                     alt="Historisk samisk bosetning med tradisjonelle bygninger"
-                     style="max-width: 100%; max-height: 100%; border-radius: 0.8rem; object-fit: cover;">
-            </div>
-            <div class="image-placeholder small">
-                <img src="{{ url_for('static', filename='img/kofte-samisk.jpg') }}"
-                     alt="Samisk kofte i tradisjonelle farger"
-                     style="max-width: 100%; max-height: 100%; border-radius: 0.8rem; object-fit: cover;">
-            </div>
-            <div class="image-placeholder small">
-                <img src="{{ url_for('static', filename='img/reindrift-samisk.jpg') }}"
-                     alt="Reindrift i et samisk landskap"
-                     style="max-width: 100%; max-height: 100%; border-radius: 0.8rem; object-fit: cover;">
-            </div>
-        </div>
+        <article class="content-section history-card-small history-card-alt">
+            <h2>Rettighetskamp og revitalisering</h2>
+            <p>
+                Fra 1900-tallet og framover vokste det fram en sterk samisk bevegelse. Protester,
+                organisasjoner og politisk arbeid førte til at samiske rettigheter ble satt på dagsorden.
+            </p>
+            <p>
+                I dag finnes det sameting, samiske medier, skoler og kulturinstitusjoner som jobber for
+                å styrke språk, kultur og deltakelse i samfunnet.
+            </p>
+        </article>
     </section>
 </main>
 {% endblock %}
